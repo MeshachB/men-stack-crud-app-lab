@@ -78,6 +78,15 @@ router.put('/:id', (req, res) => {
       res.send(err.message);
     });
 });
+// DELETE – Remove a producer
+router.delete('/:id', async (req, res) => {
+  try {
+    await Producer.findByIdAndDelete(req.params.id);
+    res.redirect('/producers');
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
 
 
 

@@ -37,7 +37,48 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.status(500).send(err.message);
   }
+}); 
+// SHOW – Show details of a producer
+router.get('/:id/edit', async (req, res) => {
+  try {
+    const producer = await Producer.findById(req.params.id);
+    res.render('producers/edit.ejs', { producer });
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
 });
+// DELETE – Remove a producer
+router.delete('/:id', (req, res) => {
+  Producer.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect('/producers');
+    })
+    .catch(err => {
+      res.send(err.message);
+    });
+});
+
+// EDIT – Form to edit one producer
+router.get('/:id/edit', (req, res) => {
+  Producer.findById(req.params.id)
+    .then(foundProducer => {
+      res.render('producers/edit.ejs', { producer: foundProducer });
+    })
+    .catch(err => {
+      res.send(err.message);
+    });
+});
+// UPDATE – Update a producer
+router.put('/:id', (req, res) => {
+  Producer.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+      res.redirect('/producers');
+    })
+    .catch(err => {
+      res.send(err.message);
+    });
+});
+
 
 
 module.exports = router;

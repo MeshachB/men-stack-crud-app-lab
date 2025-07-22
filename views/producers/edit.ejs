@@ -1,0 +1,17 @@
+<h1>Edit <%= producer.name %></h1>
+
+<form action="/producers/<%= producer._id %>?_method=PUT" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" name="name" value="<%= producer.name %>" required />
+
+  <label for="hometown">Hometown:</label>
+  <input type="text" name="hometown" value="<%= producer.hometown %>" required />
+
+  <label for="era">Era:</label>
+  <input type="text" name="era" value="<%= producer.era %>" required />
+
+  <label for="style">Style:</label>
+  <input type="text" name="style" value="<%= producer.style %>" required />
+
+  <button type="submit">Update Producer</button>
+</form>

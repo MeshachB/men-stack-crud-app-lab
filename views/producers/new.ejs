@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New GOAT Producer</title>
+</head>
+<body>
+
+<h1>Add a New GOAT Producer </h1>
+
+<form action="/producers" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" required /><br><br>
+
+  <label for="hometown">Hometown:</label>
+  <input type="text" name="hometown" id="hometown" /><br><br>
+
+  <label for="era">Era:</label>
+  <input type="text" name="era" id="era" /><br><br>
+
+  <label for="style">Style (e.g. artists or genres):</label>
+  <input type="text" name="style" id="style" /><br><br>
+
+  <button type="submit">Add Producer</button>
+</form>
+
+<a href="/producers">⬅️ Back to all producers</a>
+
+  <form action="/producers" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" required><br><br>
+
+    <label for="hometown">Hometown:</label>
+    <input type="text" name="hometown" required><br><br>
+
+    <label for="era">Era:</label>
+    <input type="text" name="era" required><br><br>
+
+    <label for="style">Style (artists/songs):</label>
+    <input type="text" name="style"><br><br>
+
+    <button type="submit">Create Producer</button>
+  </form>
+
+  <a href="/producers">Back to all producers</a>
+</body>
+</html>

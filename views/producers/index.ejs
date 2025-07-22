@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GOAT Producers</title>
+</head>
+<body>
+  <h1>GOAT Hip-Hop Producers</h1>
+
+  <a href="/producers/new">➕ Add a New Producer</a>
+
+  <ul>
+    <% producers.forEach(producer => { %>
+      <li>
+        <strong><%= producer.name %></strong><br>
+        Hometown: <%= producer.hometown %><br>
+        Era: <%= producer.era %><br>
+        Style: <%= producer.style %>
+      </li>
+      <br>
+    <% }) %>
+  </ul>
+
+</body>
+</html>
